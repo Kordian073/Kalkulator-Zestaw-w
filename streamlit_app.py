@@ -1,6 +1,17 @@
 import itertools
 import streamlit as st
 
+# 🎨 Stylizacja nagłówka
+st.markdown(
+    """
+    <div style="background-color:#6c4b2a; padding: 20px; border-radius: 10px; text-align: center;">
+        <h1 style="color: #f5f5dc; font-family: 'Trebuchet MS', sans-serif;">🍺 Browar Of Taern 🍺</h1>
+        <p style="color: #f5f5dc; font-size: 18px;">Optymalny kalkulator zestawów dla najlepszej gildii!</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 # Funkcja sprawdzająca, czy zestaw można stworzyć
 def can_create_set(set_parts, available):
     for part, amount in set_parts.items():
@@ -41,7 +52,7 @@ def find_optimal_order(available_parts, boss_sets):
 
     return max_sets, best_order, best_remaining, used_sets
 
-# Interfejs Streamlit
+# 🧮 Interfejs użytkownika
 st.title("🧮 Kalkulator Zestawów")
 st.write("Podaj ilość części, a kalkulator znajdzie optymalne ułożenie zestawów dla bossa.")
 
